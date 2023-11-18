@@ -144,7 +144,7 @@ body {
     background-color: var(--accent);
     font-size: 1.3rem;
     padding: 15px 50px;
-    margin-top: 10px;
+    margin-top: 25px;
     cursor: pointer;
     transition: all 0.2s;
 
@@ -276,11 +276,12 @@ body {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 700px) {
   .container {
     width: 110em;
+    min-height: 85vh;
     display: grid;
-    grid-template-rows: 100px 1fr 200px;
+    grid-template-rows: 70px 1fr 150px;
     grid-template-areas:
       "header-menu header-menu header-menu"
       "hero-section hero-section new-posts"
@@ -318,6 +319,25 @@ body {
 
   .hero-section {
     grid-area: hero-section;
+    display: grid;
+    gap: 0;
+    grid-template-areas:
+      "img img"
+      "main sub";
+
+    & img {
+      grid-area: img;
+    }
+
+    & h2 {
+      grid-area: main;
+      font-size: 5.5rem;
+      width: 90%;
+    }
+
+    .hero-description {
+      grid-area: sub;
+    }
   }
 
   .new-posts {
@@ -328,7 +348,6 @@ body {
   .featured-posts {
     grid-area: featured-posts;
     flex-direction: row;
-    margin: 0;
 
     .featured-post-item {
       align-items: center;
